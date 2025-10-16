@@ -1,4 +1,28 @@
-<mat-card>
-  <h2>👋 Hello from Login</h2>
-  <p>login works!</p>
-</mat-card>
+<h2 class="title">Login to Task Manager</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width field">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="you@example.com" />
+        <mat-hint align="start">Min. 5 characters</mat-hint>
+
+        @if (f.email.touched && f.email.hasError('required')) { <mat-error>Email is required</mat-error> }
+        @if (f.email.touched && f.email.hasError('email'))    { <mat-error>Invalid email</mat-error> }
+        @if (f.email.touched && f.email.hasError('minlength')){ <mat-error>Min length is 5</mat-error> }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="••••••" />
+        <mat-hint align="start">Min. 6 characters</mat-hint>
+
+        @if (f.password.touched && f.password.hasError('required')) { <mat-error>Password is required</mat-error> }
+        @if (f.password.touched && f.password.hasError('minlength')){ <mat-error>Min length is 6</mat-error> }
+    </mat-form-field>
+
+    <div class="actions">
+        <button mat-raised-button color="primary" class="full-width" type="submit">Log in</button>
+    </div>
+</form>
+
+<a routerLink="/auth/register" class="register-link">Don't have an account?</a>

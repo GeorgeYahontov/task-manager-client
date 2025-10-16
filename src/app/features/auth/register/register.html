@@ -1,1 +1,62 @@
-<p>register works!</p>
+<h2 class="title">Create your account</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width field">
+        <mat-label>Ім'я</mat-label>
+        <input matInput placeholder="Ваше ім'я" formControlName="name" />
+        @if (f.name.touched && f.name.hasError('required')) {
+            <mat-error>Обов'язкове поле</mat-error>
+        }
+        @if (f.name.touched && f.name.hasError('minlength')) {
+            <mat-error>Щонайменше 2 символи</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width field">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="you@example.com" formControlName="email" />
+        @if (f.email.touched && f.email.hasError('required')) {
+            <mat-error>Обов'язкове поле</mat-error>
+        }
+        @if (f.email.touched && f.email.hasError('email')) {
+            <mat-error>Невірний email</mat-error>
+        }
+        @if (f.email.touched && f.email.hasError('minlength')) {
+            <mat-error>Щонайменше 5 символів</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width field">
+        <mat-label>Пароль</mat-label>
+        <input matInput type="password" placeholder="••••••" formControlName="password" />
+        <mat-hint align="start">Мін. 6 символів</mat-hint>
+            @if (f.password.touched && f.password.hasError('required')) {
+                <mat-error>Обов'язкове поле</mat-error>
+            }
+            @if (f.password.touched && f.password.hasError('minlength')) {
+                <mat-error>Щонайменше 6 символів</mat-error>
+            }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width field">
+        <mat-label>Підтвердіть пароль</mat-label>
+        <input matInput type="password" placeholder="••••••" formControlName="confirmPassword" />
+        @if (f.confirmPassword.touched && f.confirmPassword.hasError('required')) {
+            <mat-error>Обов'язкове поле</mat-error>
+        }
+        @if (form.hasError('passwordMismatch') && f.confirmPassword.touched) {
+            <mat-error>Паролі не співпадають</mat-error>
+        }
+        @if (f.confirmPassword.touched && f.confirmPassword.hasError('minlength')) {
+            <mat-error>Щонайменше 6 символів</mat-error>
+        }
+    </mat-form-field>
+
+    <div class="actions">
+        <button mat-raised-button color="primary" class="full-width" type="submit">
+            Зареєструватися
+        </button>
+    </div>
+</form>
+
+<a routerLink="/auth/login" class="register-link">Вже є акаунт? Увійти</a>

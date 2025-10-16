@@ -1,0 +1,39 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Task Manager Logo</title>
+  <desc>Круглая иконка с рамкой, абстрактными карточками задач и чек-маркой</desc>
+
+  <defs>
+    <linearGradient id="strokeGrad" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00D1B2"/>
+      <stop offset="1" stop-color="#4C6FFF"/>
+    </linearGradient>
+    <radialGradient id="bgGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(90 70) rotate(45) scale(220)">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#0F1B3A"/>
+    </radialGradient>
+    <linearGradient id="shineGrad" x1="128" y1="24" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.25"/>
+    </filter>
+    <linearGradient id="accentGrad" x1="60" y1="90" x2="200" y2="196" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#57FFE1"/>
+      <stop offset="1" stop-color="#7BA7FF"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="116" fill="url(#bgGrad)" stroke="url(#strokeGrad)" stroke-width="12"/>
+  <path d="M128,24 A104,104 0 0 1 232,128 L224,128 A96,96 0 0 0 128,32 Z" fill="url(#shineGrad)"/>
+  <g filter="url(#softShadow)">
+    <rect x="72" y="104" width="112" height="72" rx="14" transform="rotate(-6 72 104)" fill="#0E254B" stroke="#173463" stroke-width="2"/>
+    <rect x="84" y="84" width="112" height="72" rx="14" transform="rotate(6 84 84)" fill="#112B59" stroke="#1C3D7A" stroke-width="2"/>
+  </g>
+  <g opacity="0.9">
+    <circle cx="118" cy="116" r="5" fill="url(#accentGrad)"/>
+    <circle cx="136" cy="116" r="5" fill="url(#accentGrad)"/>
+    <circle cx="154" cy="116" r="5" fill="url(#accentGrad)"/>
+  </g>
+  <path d="M98 150 L122 172 L166 126" fill="none" stroke="url(#accentGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M54 110 A74 74 0 0 1 202 126" fill="none" stroke="url(#accentGrad)" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round"/>
+</svg>
