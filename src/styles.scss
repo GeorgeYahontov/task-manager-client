@@ -1,0 +1,35 @@
+@use './custom-theme' as *;
+
+/* базовые ресеты */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* фон по теме */
+:root[data-theme='light'] body {
+  background: linear-gradient(135deg,
+    var(--md-sys-color-primary),
+    var(--md-sys-color-tertiary));
+}
+:root[data-theme='dark'] body {
+  background: linear-gradient(135deg,
+    var(--md-sys-color-surface-container-high),
+    var(--md-sys-color-surface-container-highest));
+}
+
+/* глобальное усиление FAB-переключателя темы */
+app-theme-toggle .theme-toggle {
+  background: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.45);
+  border: 1px solid color-mix(in oklab, var(--md-sys-color-primary), transparent 70%);
+  width: 56px; height: 56px; border-radius: 50%;
+}
+
+/* дефолтное усиление основных кнопок форм (raised) */
+button.mat-mdc-raised-button.full-width {
+  padding: 12px;
+  font-weight: 600;
+  background: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,.3);
+}

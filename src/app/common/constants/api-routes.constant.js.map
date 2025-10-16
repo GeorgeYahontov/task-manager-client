@@ -1,0 +1,1 @@
+{"version":3,"file":"api-routes.constant.js","sourceRoot":"","sources":["api-routes.constant.ts"],"names":[],"mappings":";;;AAAa,QAAA,SAAS,GAAG;IACvB,IAAI,EAAE;QACJ,KAAK,EAAE,aAAa;QACpB,QAAQ,EAAE,gBAAgB;QAC1B,EAAE,EAAE,UAAU;KACf;IACD,KAAK,EAAE;QACL,IAAI,EAAE,QAAQ;QACd,IAAI,EAAE,CAAC,EAAmB,EAAE,EAAE,CAAC,UAAU,EAAE,EAAE;KAC9C;CACF,CAAC"}

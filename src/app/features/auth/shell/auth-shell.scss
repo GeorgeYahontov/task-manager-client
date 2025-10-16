@@ -1,0 +1,31 @@
+:host { display: block; }
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-on-surface);
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  padding: 2rem;
+}
+
+.logo {
+  width: 64px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.title {
+  font: var(--mat-sys-headline-small);
+  text-align: center;
+  margin: 0 0 16px;
+}

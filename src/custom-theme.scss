@@ -1,0 +1,51 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+/* Базовые палитры */
+$primary:  mat.$cyan-palette;
+$tertiary: mat.$orange-palette;
+
+/* Тема для компонентов (M3) */
+$light-theme: mat.define-theme((
+  color: (theme-type: light, primary: $primary, tertiary: $tertiary),
+  density: (scale: 0),
+));
+
+$dark-theme: mat.define-theme((
+  color: (theme-type: dark, primary: $primary, tertiary: $tertiary),
+  density: (scale: 0),
+));
+
+/* 1) Применяем темы Angular Material ПО атрибуту на <html> */
+:root[data-theme='light'] { @include mat.all-component-themes($light-theme); }
+:root[data-theme='dark']  { @include mat.all-component-themes($dark-theme); }
+
+/* 2) ЯВНО задаём системные CSS-переменные (которые используем в стилях) */
+:root[data-theme='light'] {
+  --md-sys-color-primary:  #00bcd4; /* cyan 500 */
+  --md-sys-color-on-primary: #ffffff;
+
+  --md-sys-color-tertiary: #ff7043; /* orange 400 */
+  --md-sys-color-on-tertiary: #ffffff;
+
+  --md-sys-color-surface: #ffffff;
+  --md-sys-color-on-surface: #111111;
+
+  --md-sys-color-surface-container-high:    #f3f5f7;
+  --md-sys-color-surface-container-highest: #ffffff;
+}
+
+:root[data-theme='dark'] {
+  --md-sys-color-primary:  #00acc1; /* cyan 600 */
+  --md-sys-color-on-primary: #001014;
+
+  --md-sys-color-tertiary: #ff8a65; /* orange 300 */
+  --md-sys-color-on-tertiary: #220500;
+
+  --md-sys-color-surface: #0f1720;
+  --md-sys-color-on-surface: #e6edf3;
+
+  --md-sys-color-surface-container-high:    #0b1118;
+  --md-sys-color-surface-container-highest: #101821;
+}
